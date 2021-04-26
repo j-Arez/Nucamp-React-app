@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Breadcrumb, BreadcrumbItem,
-    Button, Row, Label, Col } from 'reactstrap';
+import {
+    Breadcrumb, BreadcrumbItem,
+    Button, Row, Label, Col
+} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
@@ -9,7 +11,6 @@ const maxLength = len => val => !val || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
 const isNumber = val => !isNaN(+val);
 const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
-
 
 class Contact extends Component {
     constructor(props) {
@@ -29,16 +30,16 @@ class Contact extends Component {
                 email: false
             }
         };
-     
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
+
     handleSubmit(values) {
         console.log('Current state is: ' + JSON.stringify(values));
         alert('Current state is: ' + JSON.stringify(values));
     }
     render() {
-        
+
         return (
             <div className="container">
                 <div className="row">
@@ -71,7 +72,7 @@ class Contact extends Component {
                         <hr />
                     </div>
                     <div className="col-md-10">
-                    <LocalForm onSubmit={values => this.handleSubmit(values)}>
+                        <LocalForm onSubmit={values => this.handleSubmit(values)}>
                             <Row className="form-group">
                                 <Label htmlFor="firstName" md={2}>First Name</Label>
                                 <Col md={10}>
@@ -84,7 +85,7 @@ class Contact extends Component {
                                             maxLength: maxLength(15)
                                         }}
                                     />
-                                     <Errors
+                                    <Errors
                                         className="text-danger"
                                         model=".firstName"
                                         show="touched"
@@ -134,8 +135,8 @@ class Contact extends Component {
                                             maxLength: maxLength(15),
                                             isNumber
                                         }}
-                                        />
-                                        <Errors
+                                    />
+                                    <Errors
                                         className="text-danger"
                                         model=".phoneNum"
                                         show="touched"
@@ -173,7 +174,7 @@ class Contact extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group">
-                                <Col md={{size: 4, offset: 2}}>
+                                <Col md={{ size: 4, offset: 2 }}>
                                     <div className="form-check">
                                         <Label check>
                                             <Control.checkbox
@@ -203,13 +204,13 @@ class Contact extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group">
-                                <Col md={{size: 10, offset: 2}}>
+                                <Col md={{ size: 10, offset: 2 }}>
                                     <Button type="submit" color="primary">
                                         Send Feedback
                                     </Button>
                                 </Col>
                             </Row>
-                        </LocalForm>   
+                        </LocalForm>
                     </div>
                 </div>
             </div>

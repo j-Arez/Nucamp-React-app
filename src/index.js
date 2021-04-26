@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-lobster';
 import 'typeface-open-sans';
-
+console.log("hi")
 ReactDOM.render(
   <React.StrictMode>
     <App />
