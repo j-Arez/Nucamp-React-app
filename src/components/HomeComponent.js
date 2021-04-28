@@ -3,7 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 
 function Home(props) {
-    return(
+    return (
         <div className="container">
             <div className="row">
                 <div className="col-md m-1">
@@ -20,7 +20,7 @@ function Home(props) {
     );
 }
 
-function RenderCard({item}) {
+function RenderCard({ item }) {
     return (
         <Card>
             <CardImg src={item.image} alt={item.name} />
