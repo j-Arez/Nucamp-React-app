@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
 
-//const maxLength = len => val => !val || (val.length <= len);
-//const minLength = len => val => val && (val.length >= len);
+const maxLength = len => val => !val || (val.length <= len);
+const minLength = len => val => val && (val.length >= len);
 
-class CommentForm extends Component {  //stolen code//
+class CommentForm extends Component {
     constructor(props) {
         super(props);
 
@@ -55,8 +55,8 @@ class CommentForm extends Component {  //stolen code//
                                 placeholder="Your Name"
                                 className="form-control"
                                 validators={{
-                                    //minLength: minLength(2),
-                                    //maxLength: maxLength(15)
+                                    minLength: minLength(2),
+                                    maxLength: maxLength(15)
                                 }}
                             />
                             <Errors
@@ -71,7 +71,7 @@ class CommentForm extends Component {  //stolen code//
                             />
                         </div>
                         <div className="form-group">
-                            <Label htmlFor="comment" md={10}>comment</Label>
+                            <Label htmlFor="comment" md={10}>Comment</Label>
                             <Control.textarea rows="6" model=".comment" id="comment" name="comment"
                                 placeholder=""
                                 className="form-control"
@@ -87,22 +87,6 @@ class CommentForm extends Component {  //stolen code//
         );
     }
 }
-
-
-
-
-
-
-
-
-//render() {
-//return (
-//<Button outline>
-// <i className="fa fa-pencil fa-lg">Submit Comment</i>
-//</Button>
-//);
-// };
-//}
 
 function RenderCampsite({ campsite }) {
     return (

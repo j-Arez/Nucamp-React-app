@@ -26,9 +26,9 @@ class Main extends Component {
         const HomePage = () => {
             return (
                 <Home
-                    campsite={this.props.campsite.filter((campsite) => campsite.featured)[0]}
-                    promotion={this.props.promotion.filter((promotion) => promotion.featured)[0]}
-                    partner={this.props.partner.filter((partner) => partner.featured)[0]}
+                    campsite={this.props.campsites.filter((campsite) => campsite.featured)[0]}
+                    promotion={this.props.promotions.filter((promotion) => promotion.featured)[0]}
+                    partner={this.props.partners.filter((partner) => partner.featured)[0]}
                 />
             );
         };
