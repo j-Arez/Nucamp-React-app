@@ -69,7 +69,7 @@ function RenderPartner({ partner }) {
     if (partner) {
         return (
             <React.Fragment>
-                <Media object src={partner.image} alt={partner.name} width="150" />
+                <Media object src={baseUrl + partner.image} alt={partner.name} width="150" />
                 <Media body className="ml-5 mb-4"> {partner.description}
                     <Media heading>{partner.name}</Media>
                 </Media>
